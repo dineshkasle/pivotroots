@@ -13,9 +13,10 @@ export class YearlyComponent implements OnInit {
   boards: any = [];
   boardsTypes: any = [];
   boardTypeDetails = null;
-  currentIndex = 0;
+  currentIndex = 1;
+  temp = '';
 
-  constructor(private api: DataService,private toastr: ToastrService) {
+  constructor(private api: DataService, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -29,6 +30,10 @@ export class YearlyComponent implements OnInit {
           this.yearlyCourses.forEach((val) => {
             this.grades.push(val.grade);
           });
+          if (this.grades.length) {
+            this.temp = this.grades[0];
+            this.onBookChange(this.grades[0]);
+          }
         },
         (error) => {
           this.toastr.error('Something Went Wrong!', 'Error!');
@@ -39,19 +44,18 @@ export class YearlyComponent implements OnInit {
   onBookChange(data) {
     this.boardsTypes = [];
     this.boards = this.yearlyCourses.find((val) => {
-      if (val.grade === data.value) {
+      if (val.grade === data) {
         return val.boards;
       }
     });
     this.boardsTypes = Object.keys(this.boards.boards);
     this.currentIndex = 0;
-    setTimeout(() => {
-      this.boardTypeDetails = null;
-    }, 100);
+    this.boardTypeDetails = null;
+    this.onSelectedBoardType(this.boardsTypes[0]);
   }
 
-  onSelectedBoardType(data) {
-    this.boardTypeDetails = this.boards.boards[data.tab.textLabel];
+  onSelectedBoardType(grade) {
+    this.boardTypeDetails = this.boards.boards[grade];
   }
 
 }

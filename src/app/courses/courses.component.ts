@@ -8,7 +8,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
   tabIndex=1;
-  defaultSelected = 1
+  defaultSelected = 0;
   constructor() { }
 
   ngOnInit(): void {

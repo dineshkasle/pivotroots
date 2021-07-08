@@ -2,7 +2,7 @@
   <div class="col-sm-3 mb">
     <mat-form-field appearance="fill">
       <mat-label>Select Board</mat-label>
-      <mat-select (selectionChange)="onBookChange($event)">
+      <mat-select (selectionChange)="onBookChange($event.value)" name="board" [(ngModel)]="temp">
         <mat-option *ngFor="let board of grades" [value]="board">
           {{board}}
         </mat-option>
@@ -11,9 +11,8 @@
   </div>
 
   <div class="col-sm-9 mb" *ngIf="boardsTypes.length">
-    <mat-tab-group mat-align-tabs="start" (selectedTabChange)="onSelectedBoardType($event);"
+    <mat-tab-group mat-align-tabs="start" (selectedTabChange)="onSelectedBoardType($event.tab.textLabel);"
                    [(selectedIndex)]="currentIndex">
-      <mat-tab></mat-tab>
       <mat-tab label="{{type}}" *ngFor="let type of boardsTypes">
 
       </mat-tab>
