@@ -4,10 +4,7 @@
       <div class="outer-area col-sm-12">
         <div class="inner-area plpr0 col-sm-12">
           <div class="other-area-color">
-
-            <mat-tab-group mat-align-tabs="start" (selectedTabChange)="onSelectedCourseType($event);"
-                           [(selectedIndex)]="defaultSelected">
-<!--              <mat-tab></mat-tab>-->
+            <mat-tab-group mat-align-tabs="start" (selectedTabChange)="onSelectedCourseType($event);">
               <mat-tab label="Yearly Courses">
                 <app-yearly></app-yearly>
               </mat-tab>
@@ -19,7 +16,7 @@
           </div>
         </div>
         <div class="other-area-color">
-          <div *ngIf="tabIndex===1">
+          <div *ngIf="tabIndex===0">
             <div class="col-sm-12 mt-l">
               <div class="col-sm-4">
                 <span class="bg-white filling-span floating-offer"> <small>Filling Out Soon</small></span>
@@ -55,7 +52,7 @@
               </div>
             </div>
           </div>
-          <div *ngIf="tabIndex===2" class="mt">
+          <div *ngIf="tabIndex===1" class="mt">
             <div class="col-sm-12 mt-l">
               <div class="col-sm-4">
                 <div class="fs_20 text-bold">
