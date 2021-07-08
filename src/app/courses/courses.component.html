@@ -1,0 +1,95 @@
+<div class="mt-25">
+  <div class="panel">
+    <div class="panel-body">
+      <div class="outer-area col-sm-12">
+        <div class="inner-area plpr0 col-sm-12">
+          <div class="other-area-color">
+
+            <mat-tab-group mat-align-tabs="start" (selectedTabChange)="onSelectedCourseType($event);"
+                           [(selectedIndex)]="defaultSelected">
+              <mat-tab></mat-tab>
+              <mat-tab label="Yearly Courses">
+                <app-yearly></app-yearly>
+              </mat-tab>
+              <mat-tab label="Monthly Courses">
+                <app-monthly></app-monthly>
+              </mat-tab>
+            </mat-tab-group>
+
+          </div>
+        </div>
+        <div class="other-area-color">
+          <div *ngIf="tabIndex===1">
+            <div class="col-sm-12 mt-l">
+              <div class="col-sm-4">
+                <span class="bg-white filling-span floating-offer"> <small>Filling Out Soon</small></span>
+
+                <div class="fs_20 text-bold">
+                  Vacant Seats <span class="text-amber"> 100 seats </span>
+                </div>
+                <div class=" text-bold">
+                  Not a classroom, but 1:1 sessions.
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <span class="bg-white filling-span floating-off"> <small> 50% OFF</small></span>
+                <div class="fs_20 text-bold">
+                  Subscription cost : <span class="text-amber"> ₹3999 <span
+                  class="strike text-amber"><small>₹5999</small></span> </span>
+                </div>
+                <div class=" text-bold ">
+                  This cost is inclusive of the tablet cost. <br>
+                  per session cost is ₹ 129.
+                </div>
+              </div>
+              <div class="col-sm-4 text-center">
+                <button class="btn btn-amber br20 text-bold btn-xl mt-25 text-black"><small>Book Now</small></button>
+              </div>
+            </div>
+            <div class="col-sm-12 mt-25">
+              <div class="col-sm-8 text-center fs_20">
+                You can also avail a 8 inch and 10 inch tablet with your subscription
+              </div>
+              <div class="col-sm-4 text-center">
+                Guaranteed <u>terms & condition's</u> apply*
+              </div>
+            </div>
+          </div>
+          <div *ngIf="tabIndex===2" class="mt">
+            <div class="col-sm-12 mt-l">
+              <div class="col-sm-4">
+                <div class="fs_20 text-bold">
+                  Monthly classes let you choose <br> your own course topics
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="fs_20 text-bold">
+                  Each Session last 45 minutes
+                </div>
+              </div>
+              <div class="col-sm-4 text-center mb">
+                <div class="mb">
+                  <button class="btn btn-amber br20 text-bold btn-xl mt-25 text-black"><small>Book Now</small></button>
+                </div>
+                <br>
+                <div>Refund same day <u>terms & condition's</u> apply*</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+      <span class="floating-area floating-position">
+        <span class="floating-area-color">
+          Guaranteed Higher Scores! Only with <b>easyMath</b>.
+        </span>
+      </span>
+
+    </div>
+  </div>
+</div>
+
+
+

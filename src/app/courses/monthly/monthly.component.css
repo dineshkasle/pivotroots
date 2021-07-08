@@ -1,0 +1,33 @@
+.monthly_grade_courses{
+  border-radius: 10px;
+  background-color: #7b6fd1;
+  padding: 15px;
+}
+.month_heading{
+  font-weight: bold;
+  font-size: 20px;
+}
+.boardDetailsStyle{
+  color: #ffb210;
+  font-weight: bold;
+  font-size: 25px;
+}
+.strike{
+  text-decoration: line-through;
+}
+.filling-span-off{
+  background-color: #6052cb;
+  color: white;
+  padding: 3px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.text-bold{
+  font-weight: bold;
+}
+.mb{
+  margin-bottom: 10px;
+}
+::ng-deep .mat-tab-labels > .mat-tab-label:first-child {
+  display: none;
+}

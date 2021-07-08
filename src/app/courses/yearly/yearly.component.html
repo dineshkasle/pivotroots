@@ -1,0 +1,56 @@
+<div class="col-sm-12">
+  <div class="col-sm-3 mb">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Board</mat-label>
+      <mat-select (selectionChange)="onBookChange($event)">
+        <mat-option *ngFor="let board of grades" [value]="board">
+          {{board}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="col-sm-9 mb" *ngIf="boardsTypes.length">
+    <mat-tab-group mat-align-tabs="start" (selectedTabChange)="onSelectedBoardType($event);"
+                   [(selectedIndex)]="currentIndex">
+      <mat-tab></mat-tab>
+      <mat-tab label="{{type}}" *ngFor="let type of boardsTypes">
+
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <div *ngIf="boardTypeDetails">
+    <div class="col-sm-12">
+      <div class="col-sm-2 detailsBox"><span class="text-bold">Total<br> Session</span> <br><span
+        class="boardDetailsStyle">{{boardTypeDetails.total_sessions}}</span></div>
+      <div class="col-sm-2 detailsBox"><span class="text-bold">Online Pre<br> Assessments</span> <br><span
+        class="boardDetailsStyle">{{boardTypeDetails.online_pre_assignments}}</span></div>
+      <div class="col-sm-2 detailsBox"><span class="text-bold">Online Post<br> Assessments</span> <br><span
+        class="boardDetailsStyle">{{boardTypeDetails.online_post_assignments}}</span></div>
+      <div class="col-sm-2 detailsBox"><span class="text-bold">Online<br> Practice</span> <br> ---</div>
+      <div class="col-sm-2 detailsBox"><span class="text-bold">Online<br> Test</span> <br><span
+        class="boardDetailsStyle">{{boardTypeDetails.online_tests}}</span></div>
+      <div class="col-sm-2 detailsBox"><span class="text-bold"> Career Counselling<br> Sessions With Edu Coach</span>
+        <br><span class="boardDetailsStyle">{{boardTypeDetails.career_counselling_sessions}}</span></div>
+    </div>
+
+    <div class="col-sm-12">
+      <div class="mb"><h4 class="text-bold">Course Topics Include</h4></div>
+
+      <div class="text-bold mb f_14" *ngIf="boardTypeDetails.syllabus.constructor.name ==='String'">
+        {{boardTypeDetails.syllabus}}
+      </div>
+
+      <div class="text-bold mb f_14" *ngIf="boardTypeDetails.syllabus.constructor.name ==='Array'">
+        <div *ngFor="let sl of boardTypeDetails.syllabus[0] | keyvalue" class="col-sm-4 syllabusBox mb">
+          <span class="text-color">{{sl.key}}</span> <br>
+          {{sl.value}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

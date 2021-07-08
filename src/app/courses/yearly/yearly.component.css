@@ -1,0 +1,41 @@
+.text-bold {
+  font-weight: bold;
+}
+
+.boardDetailsStyle {
+  color: #ffb210;
+  font-weight: bold;
+  font-size: 31px;
+}
+
+.mb {
+  margin-bottom: 10px;
+}
+
+.f_14 {
+  font-size: 14px;
+}
+
+.text-color {
+  color: #ffb210;
+}
+
+@media (max-width: 600px) {
+  .detailsBox {
+    text-align: center;
+  }
+
+  .syllabusBox {
+    overflow-y: scroll;
+  }
+}
+
+@media (min-width: 600px) {
+  .detailsBox {
+    text-align: start;
+  }
+
+  .syllabusBox {
+    height: 150px;
+  }
+}

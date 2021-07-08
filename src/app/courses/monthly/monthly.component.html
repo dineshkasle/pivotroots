@@ -1,0 +1,50 @@
+<div class="col-sm-12">
+  <div class="col-sm-3 mb">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Board</mat-label>
+      <mat-select (selectionChange)="onBookChange($event)">
+        <mat-option *ngFor="let board of grades" [value]="board">
+          {{board}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="col-sm-9 mb" *ngIf="boardsTypes.length">
+    <mat-tab-group mat-align-tabs="start" (selectedTabChange)="onSelectedBoardType($event);"
+                   [(selectedIndex)]="currentIndex">
+      <mat-tab></mat-tab>
+      <mat-tab label="{{type}}" *ngFor="let type of boardsTypes">
+
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <div *ngIf="boardTypeDetails">
+    <div *ngFor="let board of boardTypeDetails | keyvalue ; let i = index">
+
+      <div class="col-sm-12 monthly_grade_courses mb">
+        <div class="col-sm-1 mt radioBtnPosition">
+          <mat-radio-group aria-label="Select an option" name="courseId">
+            <mat-radio-button value="{{i}}" [checked]="i === 0"></mat-radio-button>
+          </mat-radio-group>
+
+        </div>
+        <div class="col-sm-4">
+          <span class="month_heading">{{board.value.valid}}</span> <br>
+          <span class="text-bold">{{board.value.refund}}</span>
+        </div>
+        <div class="col-sm-3">
+          <span
+            class="boardDetailsStyle">₹ {{((board.value.price - (board.value.discount / 100) * board.value.price | number : '1.0-0'))}}
+            <small class="strike">₹ {{board.value.price | number : '1.0-0'}}</small></span> <br>
+          <span class="bg-white filling-span-off">  {{board.value.discount}}% OFF</span>
+        </div>
+        <div class="col-sm-4">
+          <span class="month_heading">₹ {{board.value.per_class_price | number : '1.0-0'}} per session</span> <br>
+          <span class="text-bold">{{board.value.total_sessions}} Sessions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
