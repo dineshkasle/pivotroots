@@ -1,4 +1,4 @@
-<div class="col-sm-12">
+<div class="col-sm-12 plpr0">
   <div class="col-sm-3 mb">
     <mat-form-field appearance="fill">
       <mat-label>Select Board</mat-label>
@@ -11,7 +11,7 @@
 
   </div>
 
-  <div class="col-sm-9 mb" *ngIf="boardsTypes.length">
+  <div class="col-sm-9 mb plpr0" *ngIf="boardsTypes.length">
     <mat-tab-group mat-align-tabs="start"
                    (selectedTabChange)="onSelectedBoardType($event.tab.textLabel);"
                    [(selectedIndex)]="currentIndex">
@@ -22,18 +22,19 @@
     </mat-tab-group>
   </div>
   <div *ngIf="boardTypeDetails">
-    <div class="col-sm-12">
-      <div class="col-sm-2 detailsBox"><span class="text-bold">Total<br> Session</span> <br><span
-        class="boardDetailsStyle">{{boardTypeDetails.total_sessions}}</span></div>
-      <div class="col-sm-2 detailsBox"><span class="text-bold">Online Pre<br> Assessments</span> <br><span
-        class="boardDetailsStyle">{{boardTypeDetails.online_pre_assignments}}</span></div>
-      <div class="col-sm-2 detailsBox"><span class="text-bold">Online Post<br> Assessments</span> <br><span
-        class="boardDetailsStyle">{{boardTypeDetails.online_post_assignments}}</span></div>
-      <div class="col-sm-2 detailsBox"><span class="text-bold">Online<br> Practice</span> <br> ---</div>
-      <div class="col-sm-2 detailsBox"><span class="text-bold">Online<br> Test</span> <br><span
-        class="boardDetailsStyle">{{boardTypeDetails.online_tests}}</span></div>
-      <div class="col-sm-2 detailsBox"><span class="text-bold"> Career Counselling<br> Sessions With Edu Coach</span>
-        <br><span class="boardDetailsStyle">{{boardTypeDetails.career_counselling_sessions}}</span></div>
+    <div class="col-sm-12 plpr0">
+      <div class="col-sm-6 col-xs-6 col-lg-2 col-md-3"><span class="text-bold">Total<br> Session</span> <br><span
+        class="boardDetailsStyle">{{boardTypeDetails.total_sessions || 0}}</span></div>
+      <div class="col-sm-6 col-xs-6  col-lg-2 col-md-3 "><span class="text-bold">Online Pre<br> Assessments</span> <br><span
+        class="boardDetailsStyle">{{boardTypeDetails.online_pre_assignments || 0}}</span></div>
+      <div class="col-sm-6 col-xs-6  col-lg-2 col-md-3  "><span class="text-bold">Online Post<br> Assessments</span> <br><span
+        class="boardDetailsStyle">{{boardTypeDetails.online_post_assignments || 0}}</span></div>
+      <div class="col-sm-6 col-xs-6  col-lg-2 col-md-3  "><span class="text-bold">Online<br> Practice</span> <br> <span
+        class="boardDetailsStyle">00</span></div>
+      <div class="col-sm-6 col-xs-6  col-lg-2 col-md-3  "><span class="text-bold">Online<br> Test</span> <br><span
+        class="boardDetailsStyle">{{boardTypeDetails.online_tests || 0}}</span></div>
+      <div class="col-sm-6 col-xs-6  col-lg-2 col-md-3  "><span class="text-bold"> Career Counselling<br> Sessions With Edu Coach</span>
+        <br><span class="boardDetailsStyle">{{boardTypeDetails.career_counselling_sessions || 0}}</span></div>
     </div>
 
     <div class="col-sm-12">
