@@ -14,13 +14,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {ToastrModule} from 'ngx-toastr';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { TestComponent } from './test/test.component';
+import { DevCComponent } from './dev-c/dev-c.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     MonthlyComponent,
-    YearlyComponent
+    YearlyComponent,
+    TestComponent,
+    DevCComponent
   ],
   imports: [
     BrowserModule,
